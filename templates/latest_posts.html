@@ -1,0 +1,26 @@
+{% load static %}{% load tags %} {% for post in posts %}
+<div class="carousel-item-c swiper-slide">
+    <div class="card-box-b card-shadow news-box">
+        <div class="img-box-b">
+            <img src="{% static 'assets/img/post-2.jpg' %}" alt="" class="img-b img-fluid">
+        </div>
+        <div class="card-overlay">
+            <div class="card-header-b">
+                <div class="card-category-b">
+                    <a href="#" class="category-b">{{post.category}}</a>
+                </div>
+                <div class="card-title-b">
+                    <h2 class="title-2">
+                        <a href="{% url 'blog:blog-single' %}">{{post.title}}</a>
+                        <br> {{post.about_tittle}}</a>
+                    </h2>
+                </div>
+                <div class="card-date">
+                    <span class="date-b">{{ post.published_date|date:'d M Y' }} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
